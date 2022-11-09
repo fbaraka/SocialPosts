@@ -1,0 +1,22 @@
+
+
+<div *ngFor="let p of Posts">
+
+    <app-post-detail [ThePost]="p" (removePostEmitter)="RemovePost($event)"></app-post-detail>
+     
+</div>
+
+<button (click)="showAddForm()">Add New Post</button> <br/>
+<ng-container *ngIf="showAddPostForm">
+    
+    Title:<br/>
+    <input type="text" [(ngModel)]="NewTitle" ><br/>
+
+    Thought: <br/>
+    <input type="text" [(ngModel)]="NewThought"><br/>
+
+    <button (click)="submitPost()">Submit</button>
+    <button (click)="cancelPost()">Cancel</button>
+</ng-container>
+
+
